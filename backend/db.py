@@ -22,6 +22,30 @@ CREATE TABLE IF NOT EXISTS strain_readings (
     processed_at timestamptz
 );
 CREATE INDEX IF NOT EXISTS idx_strain_readings_status ON strain_readings (status, id);
+
+CREATE TABLE IF NOT EXISTS span_blockades (
+    id serial PRIMARY KEY,
+    span_code text NOT NULL,
+    starts_at timestamptz NOT NULL,
+    ends_at timestamptz NOT NULL,
+    note text NOT NULL DEFAULT '',
+    created_by text NOT NULL,
+    created_at timestamptz NOT NULL DEFAULT now(),
+    CHECK (ends_at > starts_at)
+);
+CREATE INDEX IF NOT EXISTS idx_span_blockades_span ON span_blockades (span_code, starts_at);
+
+CREATE TABLE IF NOT EXISTS blockade_rejections (
+    id serial PRIMARY KEY,
+    span_code text NOT NULL,
+    microstrain double precision NOT NULL,
+    blockade_id integer,
+    window_starts_at timestamptz NOT NULL,
+    window_ends_at timestamptz NOT NULL,
+    reason text NOT NULL,
+    attempted_by text NOT NULL,
+    attempted_at timestamptz NOT NULL DEFAULT now()
+);
 """
 
 
