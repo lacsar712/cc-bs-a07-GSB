@@ -129,3 +129,77 @@ th {
   background: #fff8e1;
   color: #f57f17;
 }
+
+.tag.live {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.tag.future {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.tag.dead {
+  background: #eceff1;
+  color: #607d8b;
+}
+
+.topright {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.tab-active {
+  background: #1565c0;
+}
+
+.userline {
+  white-space: nowrap;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.blockbanner {
+  margin: 0 0 0.75rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #ef9a9a;
+  border-radius: 4px;
+  background: #ffebee;
+  color: #b71c1c;
+  font-size: 0.9rem;
+}
+
+tr.row-live {
+  background: #fff5f5;
+}
+
+select {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  min-width: 130px;
+}
+
+input.dt {
+  min-width: 190px;
+  padding: 0.3rem 0.4rem;
+  font-size: 0.85rem;
+}
+
+button.mini {
+  padding: 0.3rem 0.7rem;
+  margin-right: 0.35rem;
+  font-size: 0.82rem;
+}
+
+button.mini.danger {
+  background: #c62828;
+}
